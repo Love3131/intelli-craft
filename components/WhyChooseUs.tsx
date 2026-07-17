@@ -1,61 +1,82 @@
 export default function WhyChooseUs() {
-  const reasons = [
+  const features = [
     {
-      number: "9+",
-      title: "Years of Experience",
-      description: "Professional experience in Project Management and Business Analysis.",
+      title: "Business First",
+      description:
+        "We focus on solving business problems, not just writing code.",
+      icon: "🎯",
     },
     {
-      number: "100%",
-      title: "Custom Solutions",
-      description: "Every website, app and AI solution is built according to client needs.",
+      title: "Modern Technology",
+      description:
+        "AI, automation and modern web technologies for scalable solutions.",
+      icon: "⚡",
     },
     {
-      number: "24/7",
-      title: "Support",
-      description: "We don't disappear after delivery. We support our clients.",
+      title: "Reliable Delivery",
+      description:
+        "Clear communication, timely delivery and long-term support.",
+      icon: "🤝",
     },
     {
-      number: "AI",
-      title: "Powered",
-      description: "We leverage Artificial Intelligence to deliver faster and smarter solutions.",
+      title: "Data Driven",
+      description:
+        "Dashboards and analytics that help businesses make better decisions.",
+      icon: "📊",
     },
   ];
 
   return (
-    <section className="py-24">
+    <section id="about" className="py-24 bg-white">
+
       <div className="max-w-7xl mx-auto px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold">
-            Why Choose IntelliCraft?
+
+        <div className="text-center">
+
+          <span className="uppercase tracking-widest text-blue-600 font-semibold">
+            Why IntelliCraft
+          </span>
+
+          <h2 className="text-5xl font-bold mt-4">
+            Why Clients Choose Us
           </h2>
 
-          <p className="mt-4 text-gray-600 text-lg">
-            We combine business knowledge with modern technology to create solutions that deliver real value.
+          <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+            We combine technology, business understanding and AI to build
+            practical digital solutions.
           </p>
+
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {reasons.map((item) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+
+          {features.map((item) => (
+
             <div
               key={item.title}
-              className="text-center border rounded-2xl p-8 hover:shadow-xl transition"
+              className="rounded-3xl border p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 transition"
             >
-              <h3 className="text-5xl font-bold text-blue-600">
-                {item.number}
+
+              <div className="text-5xl">
+                {item.icon}
+              </div>
+
+              <h3 className="mt-6 text-2xl font-bold">
+                {item.title}
               </h3>
 
-              <h4 className="mt-5 text-2xl font-semibold">
-                {item.title}
-              </h4>
-
-              <p className="mt-4 text-gray-600">
+              <p className="mt-4 text-gray-600 leading-7">
                 {item.description}
               </p>
+
             </div>
+
           ))}
+
         </div>
+
       </div>
+
     </section>
   );
 }

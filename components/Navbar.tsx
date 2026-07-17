@@ -1,37 +1,56 @@
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
-      <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
 
-        <h1 className="text-3xl font-extrabold text-blue-600">
-          IntelliCraft
-        </h1>
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-xl">
+            I
+          </div>
 
-        <div className="hidden md:flex gap-8 text-gray-700 font-medium">
+          <div>
+            <h1 className="text-2xl font-extrabold">
+              IntelliCraft
+            </h1>
 
-          <a href="#" className="hover:text-blue-600 transition">
+            <p className="text-xs text-gray-500 -mt-1">
+              AI • Web • Digital Products
+            </p>
+          </div>
+        </div>
+
+        {/* Menu */}
+        <div className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+
+          <a href="#home" className="hover:text-blue-600 transition">
             Home
           </a>
 
-          <a href="#" className="hover:text-blue-600 transition">
+          <a href="#services" className="hover:text-blue-600 transition">
             Services
           </a>
 
-          <a href="#" className="hover:text-blue-600 transition">
-            Store
+          <a href="#products" className="hover:text-blue-600 transition">
+            Products
+          </a>
+
+          <a href="#about" className="hover:text-blue-600 transition">
+            About
           </a>
 
           <a href="#" className="hover:text-blue-600 transition">
-            Tutorials
+            Blog
           </a>
 
-          <a href="#" className="hover:text-blue-600 transition">
+          <a href="#contact" className="hover:text-blue-600 transition">
             Contact
           </a>
 
         </div>
 
-        <button className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
+        {/* Button */}
+        <button className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg">
           Get Started
         </button>
 
