@@ -1,81 +1,129 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function Hero() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 86) return 86;
+        return prev + 1;
+      });
+    }, 20);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+    <section
+      id="home"
+      className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-cyan-50"
+    >
+      <div className="max-w-7xl mx-auto px-8 py-12 lg:py-16 grid lg:grid-cols-2 gap-14 items-center">
 
-      <div className="max-w-7xl mx-auto px-8 py-28 grid lg:grid-cols-2 gap-16 items-center">
+        {/* LEFT */}
 
-        {/* Left */}
         <div>
 
           <span className="inline-flex items-center rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
             🚀 AI Solutions • Websites • Digital Products
           </span>
 
-          <h1 className="mt-8 text-5xl lg:text-6xl font-extrabold leading-tight">
+          <h1 className="mt-8 text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight">
+
             Build Your
-            <span className="text-blue-600"> Digital Future</span>
+
             <br />
+
+            <span className="text-blue-600">
+              Digital Future
+            </span>
+
+            <br />
+
             With IntelliCraft
+
           </h1>
 
           <p className="mt-8 text-lg text-gray-600 leading-8 max-w-xl">
-            We build modern websites, AI-powered applications,
-            business automation, dashboards and digital products
-            that help businesses grow faster.
+
+            We build premium websites, AI-powered applications,
+            business automation, analytics dashboards and digital
+            products that help businesses grow faster.
+
           </p>
 
-          <div className="mt-10 flex gap-5">
+          <div className="mt-10 flex flex-wrap gap-4">
 
-            <button className="rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-xl hover:bg-blue-700 transition">
+            <button className="rounded-xl bg-blue-600 px-7 py-3 text-white font-semibold shadow-lg hover:bg-blue-700 hover:scale-105 transition">
+
               Start Your Project
+
             </button>
 
-            <button className="rounded-xl border border-gray-300 px-8 py-4 hover:bg-gray-100 transition">
+            <button className="rounded-xl border border-gray-300 px-7 py-3 font-semibold hover:bg-white hover:shadow-md transition">
+
               View Services
+
             </button>
 
           </div>
 
-          <div className="mt-14 flex gap-10">
+          <div className="mt-14 flex gap-12">
 
             <div>
+
               <h3 className="text-3xl font-bold text-blue-600">
                 10+
               </h3>
+
               <p className="text-gray-600">
-                Solutions Built
+                Projects
               </p>
+
             </div>
 
             <div>
+
               <h3 className="text-3xl font-bold text-blue-600">
                 100%
               </h3>
+
               <p className="text-gray-600">
                 Client Focus
               </p>
+
             </div>
 
             <div>
+
               <h3 className="text-3xl font-bold text-blue-600">
                 24/7
               </h3>
+
               <p className="text-gray-600">
                 Support
               </p>
+
             </div>
 
           </div>
 
         </div>
 
-        {/* Right */}
+        {/* RIGHT */}
 
         <div>
 
-          <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-2xl">
+          <div className="relative rounded-3xl border border-gray-200 bg-white p-8 shadow-2xl hover:shadow-blue-200 transition-all duration-500">
 
-            <div className="mb-8 flex items-center justify-between">
+            <div className="absolute -top-10 -right-10 h-44 w-44 rounded-full bg-blue-400/20 blur-3xl"></div>
+
+            <div className="absolute -bottom-10 -left-10 h-36 w-36 rounded-full bg-cyan-400/20 blur-3xl"></div>
+
+            <div className="relative flex items-center justify-between mb-8">
 
               <div>
 
@@ -83,93 +131,121 @@ export default function Hero() {
                   IntelliCraft Dashboard
                 </p>
 
-                <h2 className="mt-1 text-2xl font-bold">
-                  Project Overview
+                <h2 className="text-3xl font-bold mt-1">
+                  Live Project
                 </h2>
 
               </div>
 
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-2xl text-white">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600 text-3xl text-white animate-pulse shadow-lg">
+
                 🤖
+
               </div>
 
             </div>
 
-            <div className="space-y-5">
+            <div className="relative rounded-2xl border p-6">
 
-              <div className="rounded-2xl border p-5 hover:shadow-lg transition">
+              <div className="flex justify-between mb-3">
 
-                <div className="flex items-center justify-between">
+                <span className="font-semibold">
 
-                  <div>
+                  AI Automation
 
-                    <p className="text-sm text-gray-500">
-                      AI Assistant
-                    </p>
+                </span>
 
-                    <h3 className="font-bold">
-                      Online
-                    </h3>
+                <span className="font-bold text-green-600">
 
-                  </div>
+                  {progress}%
 
-                  <span className="font-semibold text-green-600">
-                    Active
-                  </span>
-
-                </div>
-
-                <div className="mt-4 h-2 rounded-full bg-gray-200">
-
-                  <div className="h-2 w-5/6 rounded-full bg-blue-600"></div>
-
-                </div>
+                </span>
 
               </div>
 
-              <div className="rounded-2xl border p-5 hover:shadow-lg transition">
+              <div className="h-3 rounded-full bg-gray-200 overflow-hidden">
 
-                <div className="flex items-center justify-between">
-
-                  <div>
-
-                    <p className="text-sm text-gray-500">
-                      Website Performance
-                    </p>
-
-                    <h3 className="font-bold">
-                      98%
-                    </h3>
-
-                  </div>
-
-                  <span className="font-semibold text-blue-600">
-                    Excellent
-                  </span>
-
-                </div>
+                <div
+                  className="h-3 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 transition-all duration-300"
+                  style={{ width: `${progress}%` }}
+                />
 
               </div>
 
-              <div className="rounded-2xl border p-5 hover:shadow-lg transition">
+            </div>
 
-                <div className="flex items-center justify-between">
+            <div className="grid grid-cols-2 gap-5 mt-6">
+                          <div className="rounded-2xl border p-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
 
-                  <div>
+                <p className="text-sm text-gray-500">
+                  Websites
+                </p>
 
-                    <p className="text-sm text-gray-500">
-                      Automation Tasks
-                    </p>
+                <h3 className="mt-2 text-3xl font-bold">
+                  24
+                </h3>
 
-                    <h3 className="font-bold">
-                      126 Completed
-                    </h3>
+              </div>
 
-                  </div>
+              <div className="rounded-2xl border p-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
 
-                  <span className="text-2xl text-green-600">
-                    ✓
-                  </span>
+                <p className="text-sm text-gray-500">
+                  AI Apps
+                </p>
+
+                <h3 className="mt-2 text-3xl font-bold">
+                  12
+                </h3>
+
+              </div>
+
+              <div className="rounded-2xl border p-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+
+                <p className="text-sm text-gray-500">
+                  Automation
+                </p>
+
+                <h3 className="mt-2 text-3xl font-bold">
+                  126
+                </h3>
+
+              </div>
+
+              <div className="rounded-2xl border p-5 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+
+                <p className="text-sm text-gray-500">
+                  Status
+                </p>
+
+                <h3 className="mt-2 text-2xl font-bold text-green-600">
+                  Active
+                </h3>
+
+              </div>
+
+            </div>
+
+            {/* Bottom Status */}
+
+            <div className="mt-8 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 p-6 text-white shadow-xl">
+
+              <div className="flex items-center justify-between">
+
+                <div>
+
+                  <p className="text-sm opacity-90">
+                    Current Project
+                  </p>
+
+                  <h3 className="mt-1 text-xl font-bold">
+                    IntelliCraft Website
+                  </h3>
+
+                </div>
+
+                <div className="rounded-full bg-white/20 px-4 py-2 text-sm font-semibold">
+
+                  In Progress
 
                 </div>
 
@@ -184,5 +260,6 @@ export default function Hero() {
       </div>
 
     </section>
+
   );
 }

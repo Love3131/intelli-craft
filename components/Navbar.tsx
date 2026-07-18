@@ -1,23 +1,21 @@
+import Image from "next/image";
+import Link from "next/link";
 export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-xl">
-            I
-          </div>
-
-          <div>
-            <h1 className="text-2xl font-extrabold">
-              IntelliCraft
-            </h1>
-
-            <p className="text-xs text-gray-500 -mt-1">
-              AI • Web • Digital Products
-            </p>
-          </div>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo_new.png"
+            alt=""
+            width={220}
+            height={55}
+            priority     
+           />
+         </Link>  
+        <div>
         </div>
 
         {/* Menu */}
