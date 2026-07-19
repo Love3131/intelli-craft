@@ -8,10 +8,12 @@ import Testimonials from "@/components/Testimonials";
 import CallToAction from "@/components/CallToAction";
 import Process from "@/components/Process";
 import Contact from "@/components/Contact";
+import ScrollProgress from "@/components/ScrollProgress";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="relative min-h-screen bg-transparent">
+      <ScrollProgress />
       <Navbar />
       <Hero />
       <Services />
