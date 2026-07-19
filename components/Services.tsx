@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import {
   Bot,
   Globe,
@@ -70,28 +72,38 @@ export default function Services() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
 
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="rounded-3xl border p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
-            >
+          {services.map((service, index) => (
+           <motion.div
+            key={service.title}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.1,
+           }}
+           whileHover={{
+              y: -10,
+              scale: 1.03,
+           }}
+           className="rounded-3xl border p-8 shadow-sm hover:shadow-2xl transition-all duration-300 bg-white"
+  >
+           <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
 
-              <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
+           <service.icon className="w-8 h-8 text-blue-600" />
 
-                <service.icon className="w-8 h-8 text-blue-600" />
+        </div>
 
-              </div>
+        <h3 className="text-2xl font-bold">
+          {service.title}
+        </h3>
 
-              <h3 className="text-2xl font-bold">
-                {service.title}
-              </h3>
+        <p className="mt-4 text-gray-600 leading-7">
+          {service.description}
+        </p>
 
-              <p className="mt-4 text-gray-600 leading-7">
-                {service.description}
-              </p>
-
-            </div>
-          ))}
+      </motion.div>
+    ))}
 
         </div>
 

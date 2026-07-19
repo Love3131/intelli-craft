@@ -1,146 +1,182 @@
-import { Mail, ArrowUpRight } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  ArrowUpRight,
+} from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-white">
+    <footer
+      id="contact"
+      className="bg-slate-900 text-white pt-20 pb-10"
+    >
+      <div className="max-w-7xl mx-auto px-8">
 
-      <div className="max-w-7xl mx-auto px-8 py-20 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid lg:grid-cols-4 gap-12">
 
-        {/* Company */}
+          {/* Company */}
 
-        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
 
-          <div className="flex items-center gap-3">
+            <h2 className="text-3xl font-bold">
+              IntelliCraft
+            </h2>
 
-            <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-xl font-bold">
-              I
-            </div>
+            <p className="mt-5 text-gray-400 leading-8">
+              We build AI-powered software, websites,
+              dashboards and automation solutions that
+              help businesses grow faster.
+            </p>
 
-            <div>
+          </motion.div>
 
-              <h2 className="text-2xl font-bold">
-                IntelliCraft
-              </h2>
+          {/* Services */}
 
-              <p className="text-gray-400 text-sm">
-                Build. Learn. Grow.
-              </p>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: .1 }}
+            viewport={{ once: true }}
+          >
 
-            </div>
-
-          </div>
-
-          <p className="mt-6 text-gray-400 leading-7">
-            We build AI solutions, business websites, dashboards,
-            automation and digital products for modern businesses.
-          </p>
-
-        </div>
-
-        {/* Services */}
-
-        <div>
-
-          <h3 className="text-xl font-semibold mb-6">
-            Services
-          </h3>
-
-          <ul className="space-y-3 text-gray-400">
-
-            <li className="hover:text-white cursor-pointer">
-              AI Applications
-            </li>
-
-            <li className="hover:text-white cursor-pointer">
-              Website Development
-            </li>
-
-            <li className="hover:text-white cursor-pointer">
-              Analytics Dashboards
-            </li>
-
-            <li className="hover:text-white cursor-pointer">
-              Process Automation
-            </li>
-
-          </ul>
-
-        </div>
-
-        {/* Quick Links */}
-
-        <div>
-
-          <h3 className="text-xl font-semibold mb-6">
-            Quick Links
-          </h3>
-
-          <ul className="space-y-3 text-gray-400">
-
-            <li className="hover:text-white cursor-pointer">
-              Home
-            </li>
-
-            <li className="hover:text-white cursor-pointer">
+            <h3 className="text-xl font-bold">
               Services
-            </li>
+            </h3>
 
-            <li className="hover:text-white cursor-pointer">
-              Products
-            </li>
+            <ul className="mt-6 space-y-4 text-gray-400">
 
-            <li className="hover:text-white cursor-pointer">
+              <li>AI Applications</li>
+
+              <li>Website Development</li>
+
+              <li>Automation</li>
+
+              <li>Analytics Dashboards</li>
+
+              <li>Digital Products</li>
+
+            </ul>
+
+          </motion.div>
+
+          {/* Quick Links */}
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: .2 }}
+            viewport={{ once: true }}
+          >
+
+            <h3 className="text-xl font-bold">
+              Quick Links
+            </h3>
+
+            <ul className="mt-6 space-y-4 text-gray-400">
+
+              <li>
+                <a href="#home">
+                  Home
+                </a>
+              </li>
+
+              <li>
+                <a href="#services">
+                  Services
+                </a>
+              </li>
+
+              <li>
+                <a href="#products">
+                  Products
+                </a>
+              </li>
+
+              <li>
+                <a href="#about">
+                  About
+                </a>
+              </li>
+
+            </ul>
+
+          </motion.div>
+
+          {/* Contact */}
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: .3 }}
+            viewport={{ once: true }}
+          >
+
+            <h3 className="text-xl font-bold">
               Contact
-            </li>
+            </h3>
 
-          </ul>
+            <div className="mt-6 space-y-5 text-gray-400">
 
-        </div>
+              <div className="flex gap-3">
 
-        {/* Contact */}
+                <Mail size={20} />
 
-        <div>
+                <span>
+                  hello@intellicraft.ai
+                </span>
 
-          <h3 className="text-xl font-semibold mb-6">
-            Contact
-          </h3>
+              </div>
 
-          <div className="space-y-5">
+              <div className="flex gap-3">
 
-            <div className="flex items-center gap-3 text-gray-400">
+                <Phone size={20} />
 
-              <Mail className="w-5 h-5 text-blue-500" />
+                <span>
+                  +91 XXXXX XXXXX
+                </span>
 
-              <span>
-                contact@intellicraft.in
-              </span>
+              </div>
+
+              <div className="flex gap-3">
+
+                <MapPin size={20} />
+
+                <span>
+                  India
+                </span>
+
+              </div>
 
             </div>
 
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 mt-4 bg-blue-600 hover:bg-blue-700 transition px-5 py-3 rounded-xl"
-            >
-              Get In Touch
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
+            <button className="mt-8 flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-700 transition">
 
-          </div>
+              Start Project
+
+              <ArrowUpRight size={18} />
+
+            </button>
+
+          </motion.div>
 
         </div>
 
-      </div>
-
-      <div className="border-t border-slate-800">
-
-        <div className="max-w-7xl mx-auto px-8 py-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+        <div className="border-t border-slate-700 mt-16 pt-8 flex flex-col lg:flex-row justify-between items-center text-gray-500">
 
           <p>
-            © 2026 IntelliCraft. All rights reserved.
+            © 2026 IntelliCraft. All Rights Reserved.
           </p>
 
-          <p className="mt-4 md:mt-0">
-            Built with Next.js & Tailwind CSS
+          <p className="mt-4 lg:mt-0">
+            Designed with ❤️ using Next.js & Tailwind CSS
           </p>
 
         </div>
