@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
         <div className="text-center">
 
           <span className="uppercase tracking-widest text-blue-600 font-semibold">
-            Why IntelliCraft
+            Why EruDigm
           </span>
 
           <h2 className="text-5xl font-bold mt-4">

@@ -8,7 +8,7 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "Business Owner",
     review:
-      "IntelliCraft transformed our business with a modern website and automation. Highly recommended.",
+      "EruDigm transformed our business with a modern website and automation. Highly recommended.",
   },
   {
     name: "David Miller",

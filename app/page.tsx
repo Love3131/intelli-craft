@@ -9,7 +9,7 @@ import CallToAction from "@/components/CallToAction";
 import Process from "@/components/Process";
 import Contact from "@/components/Contact";
 import ScrollProgress from "@/components/ScrollProgress";
-
+import About from "@/components/About";
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-transparent">
@@ -18,6 +18,7 @@ export default function Home() {
       <Hero />
       <Services />
       <FeaturedProducts />
+      <About />
       <Process />
       <WhyChooseUs />
       <Testimonials />

@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "IntelliCraft | AI Solutions, Websites & Business Automation",
-    template: "%s | IntelliCraft",
+    default: "EruDigm | AI Solutions, Websites & Business Automation",
+    template: "%s | EruDigm",
   },
   description:
-    "IntelliCraft builds AI applications, AI agents, websites, business automation, analytics dashboards, and custom software.",
+    "EruDigm builds AI applications, AI agents, websites, business automation, analytics dashboards, and custom software.",
   keywords: [
     "AI Development",
     "AI Agents",
@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     "Business Automation",
     "Analytics Dashboard",
     "Custom Software",
-    "IntelliCraft",
+    "EruDigm",
   ],
-  authors: [{ name: "IntelliCraft" }],
-  creator: "IntelliCraft",
+  authors: [{ name: "EruDigm" }],
+  creator: "EruDigm",
   robots: {
     index: true,
     follow: true,

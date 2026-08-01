@@ -3,47 +3,52 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const menuItems = [
+  { label: "Home", href: "#home" },
+  { label: "Services", href: "#services" },
+  { label: "Products", href: "#products" },
+  { label: "Resources", href: "#resources" },
+  { label: "Contact", href: "#contact" },
+];
+
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-white/20 bg-white/70 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/60 transition-all duration-300">
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-6">
+    <nav className="sticky top-0 z-50 border-b border-white/20 bg-white/80 backdrop-blur-xl">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
             src="/logo_new.png"
-            alt="IntelliCraft"
+            alt="EruDigm"
             width={220}
             height={55}
             priority
-            className="h-auto w-[180px] transition-transform duration-300 hover:scale-105"
+            className="h-auto w-[170px] lg:w-[190px] transition-transform duration-300 hover:scale-105"
           />
         </Link>
 
-        {/* Menu */}
-        <div className="hidden items-center gap-8 md:flex">
-          {[
-            ["Home", "#home"],
-            ["Services", "#services"],
-            ["Products", "#products"],
-            ["About", "#about"],
-            ["Blog", "#"],
-            ["Contact", "#contact"],
-          ].map(([label, href]) => (
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-8">
+          {menuItems.map((item) => (
             <a
-              key={label}
-              href={href}
-              className="relative text-sm font-medium text-gray-700 transition-all duration-300 hover:text-blue-600 after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+              key={item.label}
+              href={item.href}
+              className="relative text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
             >
-              {label}
+              {item.label}
             </a>
           ))}
         </div>
 
         {/* CTA */}
-        <button className="rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3 font-semibold text-white shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/40">
+        <a
+          href="#contact"
+          className="hidden md:inline-flex rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+        >
           Get Started
-        </button>
+        </a>
+
       </div>
     </nav>
   );

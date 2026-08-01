@@ -1,6 +1,6 @@
 export default function CallToAction() {
   return (
-    <section id="contact" className="py-24 bg-gradient-to-r from-blue-600 to-cyan-500">
+    <section className="py-24 bg-gradient-to-r from-blue-600 to-cyan-500">
 
       <div className="max-w-5xl mx-auto px-8 text-center text-white">
 
@@ -20,13 +20,19 @@ export default function CallToAction() {
 
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-5">
 
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition shadow-lg">
+          <a
+            href="#contact"
+            className="rounded-xl bg-white px-8 py-4 font-bold text-blue-600 shadow-lg transition hover:bg-gray-100"
+          >
             Book Free Consultation
-          </button>
+          </a>
 
-          <button className="border border-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-600 transition">
+          <a
+            href="#services"
+            className="rounded-xl border border-white px-8 py-4 font-bold text-white transition hover:bg-white hover:text-blue-600"
+          >
             View Our Services
-          </button>
+          </a>
 
         </div>
 
