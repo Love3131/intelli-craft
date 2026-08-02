@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FAQ from "@/components/FAQ";
 
 export default function ResourcesPage() {
   return (
@@ -143,9 +144,13 @@ export default function ResourcesPage() {
 
       </section>
 
+      {/* FAQ */}
+
+      <FAQ />
+
       {/* CTA */}
 
-      <section className="max-w-7xl mx-auto px-8 pb-24 text-center">
+      <section className="max-w-7xl mx-auto px-8 py-24 text-center">
 
         <h2 className="text-4xl font-bold">
           Need Custom Solutions?
@@ -153,7 +158,8 @@ export default function ResourcesPage() {
 
         <p className="mt-5 text-xl text-gray-600">
           We build websites, AI applications,
-          dashboards and automation solutions.
+          dashboards, automation solutions,
+          analytics platforms and custom software.
         </p>
 
         <Link
