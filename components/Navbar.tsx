@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const menuItems = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Products", href: "#products" },
-  { label: "Resources", href: "#resources" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "#home", external: false },
+  { label: "Services", href: "#services", external: false },
+  { label: "Products", href: "#products", external: false },
+  { label: "Resources", href: "/resources", external: true },
+  { label: "Contact", href: "#contact", external: false },
 ];
 
 export default function Navbar() {
@@ -30,15 +30,25 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
-          {menuItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="relative text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {item.label}
-            </a>
-          ))}
+          {menuItems.map((item) =>
+            item.external ? (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="relative text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.label}
+                href={item.href}
+                className="relative text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-blue-600 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {item.label}
+              </a>
+            )
+          )}
         </div>
 
         {/* CTA */}
