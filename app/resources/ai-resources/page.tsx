@@ -60,39 +60,39 @@ const promptGuides = [
     available: true,
   },
   {
-    title: "Chain of Thought Prompting",
-    description:
-      "Learn techniques for handling structured and multi-step reasoning tasks.",
-    href: null,
-    available: false,
+  title: "Chain of Thought Prompting",
+  description:
+    "Learn techniques for handling structured and multi-step reasoning tasks.",
+  href: "/resources/ai-resources/guides/chain-of-thought-prompting",
+  available: true,
   },
   {
-    title: "Few Shot Prompting",
-    description:
-      "Learn how examples can help guide AI toward the output you need.",
-    href: null,
-    available: false,
+  title: "Few Shot Prompting",
+  description:
+    "Learn how examples can help guide AI toward the output you need.",
+  href: "/resources/ai-resources/guides/few-shot-prompting",
+  available: true,
   },
   {
-    title: "Role Based Prompting",
-    description:
-      "Use roles and expertise to give AI clearer context for professional tasks.",
-    href: null,
-    available: false,
+  title: "Role Based Prompting",
+  description:
+    "Use roles and expertise to give AI clearer context for professional tasks.",
+  href: "/resources/ai-resources/guides/role-based-prompting",
+  available: true,
   },
   {
-    title: "Business Prompt Library",
-    description:
-      "Practical prompts designed for common business and workplace activities.",
-    href: null,
-    available: false,
+  title: "Business Prompt Library",
+  description:
+    "Practical prompts designed for common business and workplace activities.",
+  href: "/resources/ai-resources/guides/business-prompt-library",
+  available: true,
   },
-  {
-    title: "SQL Prompt Collection",
-    description:
-      "Useful AI prompts for SQL learning, analysis, debugging and query development.",
-    href: null,
-    available: false,
+  { 
+  title: "SQL Prompt Collection",
+  description:
+    "Useful AI prompts for SQL learning, analysis, debugging and query development.",
+  href: "/resources/ai-resources/guides/sql-prompt-collection",
+  available: true,
   },
 ];
 
