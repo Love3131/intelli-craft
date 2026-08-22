@@ -22,26 +22,46 @@ export default function DownloadModal({
 
   if (!open) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    // Download selected file
-    const link = document.createElement("a");
-    link.href = file;
-    link.download = file.split("/").pop() || "";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  try {
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbxNjHREAF1l20U0eF4nNbrYrbS6RxYLqK3MqIkYqgOwojkkd2SPFuTYyIOGp2RuI4Mz/exec",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          resource: title,
+          type: "Free",
+        }),
+      }
+    );
+  } catch (error) {
+    console.error("Lead capture failed:", error);
+  }
 
-    alert("Thank you! Your download has started.");
+  // Download selected file
+  const link = document.createElement("a");
+  link.href = file;
+  link.download = file.split("/").pop() || "";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 
-    setForm({
-      name: "",
-      email: "",
-    });
+  alert("Thank you! Your download has started.");
 
-    onClose();
-  };
+  setForm({
+    name: "",
+    email: "",
+  });
+
+  onClose();
+};
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
