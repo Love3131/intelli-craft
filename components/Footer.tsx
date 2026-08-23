@@ -132,7 +132,7 @@ export default function Footer() {
                 <Mail size={20} />
 
                 <span>
-                  hello@erudigm.in
+                  erudigm@gmail.com
                 </span>
 
               </div>
@@ -142,7 +142,7 @@ export default function Footer() {
                 <Phone size={20} />
 
                 <span>
-                  +91 XXXXX XXXXX
+                  +91 9045023131
                 </span>
 
               </div>

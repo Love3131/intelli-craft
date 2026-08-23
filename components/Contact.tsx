@@ -25,20 +25,28 @@ export default function Contact() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    setLoading(true);
-    setSuccess("");
+  setLoading(true);
+  setSuccess("");
 
-    // Temporary
-    console.log("Contact Form:", form);
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
 
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const data = await response.json();
 
-    setLoading(false);
+    if (!response.ok) {
+      throw new Error(data.error || "Unable to send message.");
+    }
 
     setSuccess(
-      "Thank you! Your message has been received. We'll get back to you soon."
+      "Thank you! Your message has been sent successfully. We'll get back to you soon."
     );
 
     setForm({
@@ -47,7 +55,16 @@ export default function Contact() {
       subject: "",
       message: "",
     });
-  };
+  } catch (error) {
+    console.error("Contact form error:", error);
+
+    setSuccess(
+      "Sorry, we couldn't send your message. Please email us directly at Erudigm@gmail.com."
+    );
+  } finally {
+    setLoading(false);
+  }
+ };
 
   return (
     <section id="contact" className="py-24 bg-white">
@@ -94,7 +111,7 @@ export default function Contact() {
                   </h3>
 
                   <p className="text-gray-600">
-                    hello@erudigm.in
+                    erudigm@gmail.com
                   </p>
 
                 </div>
@@ -114,7 +131,7 @@ export default function Contact() {
                   </h3>
 
                   <p className="text-gray-600">
-                    +91 XXXXX XXXXX
+                    +91 9045023131
                   </p>
 
                 </div>
