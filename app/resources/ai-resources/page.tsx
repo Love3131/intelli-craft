@@ -2,52 +2,58 @@ import Link from "next/link";
 
 const aiTools = [
   {
-    id: 1,
-    icon: "🤖",
-    title: "ChatGPT",
-    description:
-      "Create content, write code, analyze data and improve productivity.",
-    category: "AI Assistant",
+  id: 1,
+  icon: "🤖",
+  title: "ChatGPT",
+  description:
+    "Create content, analyze files and data, research, code and support professional workflows.",
+  category: "AI Assistant",
+  href: "/resources/ai-resources/tools/chatgpt",
   },
   {
-    id: 2,
-    icon: "🧠",
-    title: "Claude",
-    description:
-      "Excellent for long-form writing, documents and business analysis.",
-    category: "AI Assistant",
+  id: 2,
+  icon: "🧠",
+  title: "Claude",
+  description:
+    "Work with codebases, long documents, structured analysis and professional writing.",
+  category: "AI Assistant",
+  href: "/resources/ai-resources/tools/claude",
   },
   {
-    id: 3,
-    icon: "✨",
-    title: "Gemini",
-    description:
-      "Google's AI assistant integrated with Workspace and Search.",
-    category: "AI Assistant",
+  id: 3,
+  icon: "✨",
+  title: "Gemini",
+  description:
+    "Work across Google Workspace, research, files, data, multimodal tasks and coding.",
+  category: "AI Assistant",
+  href: "/resources/ai-resources/tools/gemini",
   },
   {
-    id: 4,
-    icon: "💻",
-    title: "GitHub Copilot",
-    description:
-      "AI pair programmer that helps developers write code faster.",
-    category: "Developer Tool",
+  id: 4,
+  icon: "💻",
+  title: "GitHub Copilot",
+  description:
+    "Work across IDE coding, agentic implementation, testing, repository tasks and code review.",
+  category: "Developer Tool",
+  href: "/resources/ai-resources/tools/github-copilot",
+},
+  {
+  id: 5,
+  icon: "🚀",
+  title: "Cursor AI",
+  description:
+    "Work with codebase context, agentic development, debugging, refactoring and multi-file changes.",
+  category: "Developer Tool",
+  href: "/resources/ai-resources/tools/cursor-ai",
   },
   {
-    id: 5,
-    icon: "🚀",
-    title: "Cursor AI",
-    description:
-      "Modern AI-powered code editor for professional developers.",
-    category: "Developer Tool",
-  },
-  {
-    id: 6,
-    icon: "🔍",
-    title: "Perplexity AI",
-    description:
-      "AI-powered search engine for accurate research and references.",
-    category: "Research",
+  id: 6,
+  icon: "🔍",
+  title: "Perplexity AI",
+  description:
+    "Research the live web, compare sources, verify claims and build evidence-backed analysis.",
+  category: "Research",
+  href: "/resources/ai-resources/tools/perplexity-ai",
   },
 ];
 
@@ -87,7 +93,7 @@ const promptGuides = [
   href: "/resources/ai-resources/guides/business-prompt-library",
   available: true,
   },
-  { 
+  {
   title: "SQL Prompt Collection",
   description:
     "Useful AI prompts for SQL learning, analysis, debugging and query development.",
@@ -162,9 +168,18 @@ export default function AIResourcesPage() {
                 {tool.description}
               </p>
 
+              {tool.href ? (
+                <Link
+                  href={tool.href}
+                  className="mt-8 block w-full rounded-xl bg-blue-600 py-3 text-center font-semibold text-white transition hover:bg-blue-700"
+              >
+                  Explore Guide →
+               </Link>
+            ) : (
               <div className="mt-8 w-full rounded-xl bg-slate-100 py-3 text-center text-sm font-semibold text-slate-500">
-                Guide Coming Soon
+               Guide Coming Soon
               </div>
+            )}
             </div>
           ))}
         </div>
@@ -233,75 +248,242 @@ export default function AIResourcesPage() {
       </section>
 
       {/* Comparison */}
-      <section className="max-w-6xl mx-auto px-8 pb-24">
-        <div className="rounded-3xl bg-white shadow-xl p-8 md:p-12">
-          <div className="text-center mb-12">
-            <span className="text-sm font-bold uppercase tracking-widest text-blue-600">
-              Quick Comparison
-            </span>
+      {/* AI Tool Comparison */}
 
-            <h2 className="mt-3 text-4xl font-bold">
-              AI Model Comparison
-            </h2>
-          </div>
+<section className="max-w-7xl mx-auto px-8 pb-24">
 
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse overflow-hidden">
-              <thead>
-                <tr className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white">
-                  <th className="p-4 text-left">Model</th>
-                  <th className="p-4 text-left">Best For</th>
-                  <th className="p-4 text-left">Status</th>
-                </tr>
-              </thead>
+  <div className="rounded-3xl bg-white shadow-xl p-8 md:p-12">
 
-              <tbody>
-                <tr className="border-b">
-                  <td className="p-4 font-semibold">ChatGPT</td>
-                  <td className="p-4">Coding & Productivity</td>
-                  <td className="p-4 text-green-600 font-semibold">
-                    Recommended
-                  </td>
-                </tr>
+    <div className="text-center mb-12">
 
-                <tr className="border-b">
-                  <td className="p-4 font-semibold">Claude</td>
-                  <td className="p-4">Writing & Documents</td>
-                  <td className="p-4 text-green-600 font-semibold">
-                    Recommended
-                  </td>
-                </tr>
+      <span className="text-sm font-bold uppercase tracking-widest text-blue-600">
+        Quick Comparison
+      </span>
 
-                <tr className="border-b">
-                  <td className="p-4 font-semibold">Gemini</td>
-                  <td className="p-4">Google Workspace</td>
-                  <td className="p-4 text-green-600 font-semibold">
-                    Recommended
-                  </td>
-                </tr>
+      <h2 className="mt-3 text-4xl font-bold">
+        AI Tool Comparison
+      </h2>
 
-                <tr className="border-b">
-                  <td className="p-4 font-semibold">Perplexity</td>
-                  <td className="p-4">Research</td>
-                  <td className="p-4 text-green-600 font-semibold">
-                    Recommended
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <p className="mt-4 max-w-3xl mx-auto text-gray-600 leading-7">
+        There is no single best AI tool. Different tools are stronger for
+        different workflows, and their capabilities continue to evolve.
+      </p>
 
-          <div className="text-center mt-12">
-            <Link
-              href="/resources"
-              className="inline-block rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-blue-700"
-            >
-              ← Back to Resources
-            </Link>
-          </div>
-        </div>
-      </section>
+    </div>
 
+    <div className="overflow-x-auto">
+
+      <table className="w-full min-w-[900px] border-collapse">
+
+        <thead>
+
+          <tr className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white">
+
+            <th className="p-4 text-left">
+              Tool
+            </th>
+
+            <th className="p-4 text-left">
+              Particularly Strong For
+            </th>
+
+            <th className="p-4 text-center">
+              Coding
+            </th>
+
+            <th className="p-4 text-center">
+              Research
+            </th>
+
+            <th className="p-4 text-center">
+              Business Work
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr className="border-b">
+
+            <td className="p-4 font-bold">
+              ChatGPT
+            </td>
+
+            <td className="p-4 text-gray-600">
+              General productivity, analysis, coding workflows and multimodal work
+            </td>
+
+            <td className="p-4 text-center font-semibold text-blue-600">
+              Strong
+            </td>
+
+            <td className="p-4 text-center">
+              Strong
+            </td>
+
+            <td className="p-4 text-center font-semibold text-green-600">
+              Excellent
+            </td>
+
+          </tr>
+
+          <tr className="border-b">
+
+            <td className="p-4 font-bold">
+              Claude
+            </td>
+
+            <td className="p-4 text-gray-600">
+              Coding workflows, long documents, analysis and structured writing
+            </td>
+
+            <td className="p-4 text-center font-semibold text-green-600">
+              Excellent
+            </td>
+
+            <td className="p-4 text-center">
+              Strong
+            </td>
+
+            <td className="p-4 text-center font-semibold text-green-600">
+              Excellent
+            </td>
+
+          </tr>
+
+          <tr className="border-b">
+
+            <td className="p-4 font-bold">
+              Gemini
+            </td>
+
+            <td className="p-4 text-gray-600">
+              Google ecosystem, multimodal tasks, coding and research workflows
+            </td>
+
+            <td className="p-4 text-center font-semibold text-blue-600">
+              Strong
+            </td>
+
+            <td className="p-4 text-center font-semibold text-blue-600">
+              Strong
+            </td>
+
+            <td className="p-4 text-center font-semibold text-blue-600">
+              Strong
+            </td>
+
+          </tr>
+
+          <tr className="border-b">
+
+            <td className="p-4 font-bold">
+              Perplexity
+            </td>
+
+            <td className="p-4 text-gray-600">
+              Web research, discovery, source-oriented exploration and comparisons
+            </td>
+
+            <td className="p-4 text-center text-gray-500">
+              Useful
+            </td>
+
+            <td className="p-4 text-center font-semibold text-green-600">
+              Excellent
+            </td>
+
+            <td className="p-4 text-center font-semibold text-blue-600">
+              Strong
+            </td>
+
+          </tr>
+
+          <tr className="border-b">
+
+            <td className="p-4 font-bold">
+              GitHub Copilot
+            </td>
+
+            <td className="p-4 text-gray-600">
+              IDE-centered software development and coding assistance
+            </td>
+
+            <td className="p-4 text-center font-semibold text-green-600">
+              Excellent
+            </td>
+
+            <td className="p-4 text-center text-gray-500">
+              Limited Focus
+            </td>
+
+            <td className="p-4 text-center text-gray-500">
+              Developer Focus
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td className="p-4 font-bold">
+              Cursor AI
+            </td>
+
+            <td className="p-4 text-gray-600">
+              AI-assisted codebase development, debugging and refactoring
+            </td>
+
+            <td className="p-4 text-center font-semibold text-green-600">
+              Excellent
+            </td>
+
+            <td className="p-4 text-center text-gray-500">
+              Limited Focus
+            </td>
+
+            <td className="p-4 text-center text-gray-500">
+              Developer Focus
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <div className="mt-8 rounded-2xl border border-blue-100 bg-gradient-to-r from-blue-50 to-cyan-50 p-6">
+
+      <p className="font-bold text-blue-700">
+        How to read this comparison
+      </p>
+
+      <p className="mt-2 leading-7 text-gray-600">
+        These ratings describe practical areas of strength rather than declaring
+        an overall winner. The right choice depends on your workflow,
+        integrations, model access, task complexity and the type of work you
+        need to complete.
+      </p>
+
+    </div>
+
+    <div className="text-center mt-12">
+
+      <Link
+        href="/resources"
+        className="inline-block rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-blue-700"
+      >
+        ← Back to Resources
+      </Link>
+
+    </div>
+
+  </div>
+
+</section>
     </main>
   );
 }
