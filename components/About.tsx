@@ -4,20 +4,20 @@ import { motion } from "framer-motion";
 
 const stats = [
   {
-    number: "9+",
-    title: "Years Experience",
+    number: "3",
+    title: "Digital Products",
   },
   {
-    number: "25+",
-    title: "Projects Delivered",
+    number: "12",
+    title: "EruDigm Insights",
   },
   {
-    number: "100%",
-    title: "Client Focus",
+    number: "12",
+    title: "AI Guides",
   },
   {
-    number: "24/7",
-    title: "Support",
+    number: "Live",
+    title: "Digital Platform",
   },
 ];
 
@@ -65,9 +65,12 @@ export default function About() {
 
             <div className="mt-10">
 
-              <button className="rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white hover:bg-blue-700 transition">
-                Learn More
-              </button>
+              <a
+                href="#contact"
+                className="inline-block rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white hover:bg-blue-700 transition"
+           >
+                Start a Conversation
+              </a>
 
             </div>
 

@@ -107,43 +107,51 @@ export default function ResourcesPage() {
 
       </section>
 
-      {/* Newsletter */}
+      {/* Resource Discovery CTA */}
 
-      <section className="max-w-5xl mx-auto px-8 py-24">
+<section className="max-w-5xl mx-auto px-8 py-24">
 
-        <div className="rounded-3xl bg-gradient-to-r from-blue-600 to-cyan-500 p-12 text-center text-white">
+  <div className="rounded-3xl bg-gradient-to-r from-blue-600 to-cyan-500 p-12 text-center text-white shadow-xl">
 
-          <h2 className="text-4xl font-bold">
-            Join the EruDigm Newsletter
-          </h2>
+    <span className="inline-block rounded-full bg-white/15 px-4 py-2 text-sm font-semibold">
+      Learn • Explore • Apply
+    </span>
 
-          <p className="mt-6 text-blue-100 text-lg max-w-2xl mx-auto leading-8">
-            Get weekly SQL tips, AI tutorials,
-            Excel tricks, dashboards, automation ideas
-            and free templates directly in your inbox.
-          </p>
+    <h2 className="mt-6 text-4xl font-bold">
+      Stay Ahead with EruDigm
+    </h2>
 
-          <form className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+    <p className="mt-6 text-blue-100 text-lg max-w-3xl mx-auto leading-8">
+      Explore practical AI guides, emerging technology insights,
+      prompt-engineering resources and ready-to-use business tools
+      designed to help you work smarter.
+    </p>
 
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full sm:w-96 rounded-xl px-5 py-4 text-gray-900 outline-none"
-            />
+    <div className="mt-10 flex flex-wrap justify-center gap-4">
 
-            <button
-              type="submit"
-              className="rounded-xl bg-white px-8 py-4 font-bold text-blue-600 hover:bg-gray-100 transition"
-            >
-              Subscribe
-            </button>
+      <Link
+        href="/resources/blog"
+        className="rounded-xl bg-white px-8 py-4 font-bold text-blue-600 transition hover:-translate-y-1 hover:bg-gray-100 hover:shadow-lg"
+      >
+        Explore Latest Insights
+      </Link>
 
-          </form>
+      <Link
+        href="/resources/ai-resources"
+        className="rounded-xl border border-white/70 px-8 py-4 font-bold text-white transition hover:-translate-y-1 hover:bg-white hover:text-blue-600"
+      >
+        Explore AI Resources
+      </Link>
 
-        </div>
+    </div>
 
-      </section>
+    <p className="mt-7 text-sm text-blue-100">
+      New resources and insights are added as the EruDigm knowledge library grows.
+    </p>
 
+  </div>
+
+</section>
       {/* FAQ */}
 
       <FAQ />

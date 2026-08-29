@@ -8,43 +8,46 @@ const products = [
     title: "Executive Dashboard",
     icon: "📊",
     description:
-      "Interactive dashboards for executives with KPIs, charts and business insights.",
+      "Turn business data into executive-ready KPIs, trends, risks and decision insights.",
     features: [
-      "Power BI & Excel",
-      "Executive Reporting",
-      "Interactive Visuals",
+      "Executive KPI Reporting",
+      "Interactive Business Insights",
+      "Customizable Dashboards",
     ],
     status: "Premium",
     color: "from-blue-600 to-cyan-500",
     link: "/products/executive-dashboard",
+    enquiry: "Executive Dashboard",
   },
   {
     title: "AI Prompt Bundle",
     icon: "🤖",
     description:
-      "Professionally crafted prompts for ChatGPT, Claude and Gemini to improve productivity.",
+      "A practical prompt library for business, analysis, research, productivity and AI-assisted work.",
     features: [
-      "500+ AI Prompts",
-      "Business Templates",
-      "Regular Updates",
+      "500+ Structured AI Prompts",
+      "Business & Analysis Workflows",
+      "ChatGPT, Claude & Gemini",
     ],
     status: "Coming Soon",
     color: "from-purple-600 to-pink-500",
     link: "/products/ai-prompt-bundle",
+    enquiry: "AI Prompt Bundle",
   },
   {
     title: "Excel Automation Kit",
     icon: "📈",
     description:
-      "Ready-to-use Excel dashboards, trackers and automation templates for professionals.",
+      "Ready-to-use dashboards, trackers and automation tools for recurring business workflows.",
     features: [
       "Dashboard Templates",
-      "Project Trackers",
-      "Automation Tools",
+      "Operational Trackers",
+      "Automation Components",
     ],
     status: "Coming Soon",
     color: "from-green-600 to-emerald-500",
     link: "/products/excel-automation-kit",
+    enquiry: "Excel Automation Kit",
   },
 ];
 
@@ -57,7 +60,6 @@ export default function FeaturedProducts() {
       <div className="max-w-7xl mx-auto px-8">
 
         <div className="text-center">
-
           <span className="uppercase tracking-widest text-blue-600 font-semibold">
             Our Products
           </span>
@@ -67,16 +69,14 @@ export default function FeaturedProducts() {
           </h2>
 
           <p className="mt-6 max-w-3xl mx-auto text-xl text-gray-600">
-            Professional templates, AI solutions and business tools designed to
-            save time and increase productivity.
+            Practical dashboards, AI resources and automation tools designed
+            to reduce manual work and improve business decision-making.
           </p>
-
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mt-20">
 
           {products.map((product, index) => (
-
             <motion.div
               key={product.title}
               initial={{ opacity: 0, y: 40 }}
@@ -95,16 +95,14 @@ export default function FeaturedProducts() {
 
               <div className="p-8">
 
-                <div className="flex items-center justify-between">
-
+                <div className="flex items-center justify-between gap-4">
                   <h3 className="text-3xl font-bold">
                     {product.title}
                   </h3>
 
-                  <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-blue-700">
+                  <span className="shrink-0 rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-blue-700">
                     {product.status}
                   </span>
-
                 </div>
 
                 <p className="mt-5 text-gray-600 leading-8">
@@ -112,18 +110,15 @@ export default function FeaturedProducts() {
                 </p>
 
                 <ul className="mt-8 space-y-3">
-
                   {product.features.map((feature) => (
-
                     <li
                       key={feature}
                       className="flex items-center gap-3 text-gray-700"
                     >
-                      ✅ {feature}
+                      <span className="font-bold text-green-600">✓</span>
+                      {feature}
                     </li>
-
                   ))}
-
                 </ul>
 
                 <div className="mt-10 flex gap-4">
@@ -135,23 +130,22 @@ export default function FeaturedProducts() {
                     Learn More
                   </Link>
 
-                  <Link
-                    href="/#contact"
-                    className="flex-1 rounded-xl border border-gray-300 py-3 text-center font-semibold hover:bg-gray-100 transition"
+                  <a
+                     href={`/?product=${encodeURIComponent(
+                          product.enquiry
+                     )}#contact`}
+                     className="flex-1 rounded-xl border border-gray-300 py-3 text-center font-semibold hover:bg-gray-100 transition"
                   >
                     Get Started
-                  </Link>
+                  </a>
 
                 </div>
 
               </div>
-
             </motion.div>
-
           ))}
 
         </div>
-
       </div>
     </section>
   );

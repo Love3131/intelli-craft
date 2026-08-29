@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
@@ -14,6 +15,27 @@ export default function Contact() {
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
+  useEffect(() => {
+  const updateProductSubject = () => {
+    const params = new URLSearchParams(window.location.search);
+    const product = params.get("product");
+
+    if (product) {
+      setForm((currentForm) => ({
+        ...currentForm,
+        subject: `${product} Enquiry`,
+      }));
+    }
+  };
+
+  updateProductSubject();
+
+  window.addEventListener("popstate", updateProductSubject);
+
+  return () => {
+    window.removeEventListener("popstate", updateProductSubject);
+  };
+}, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
